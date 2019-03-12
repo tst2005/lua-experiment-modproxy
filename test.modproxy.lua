@@ -1,6 +1,7 @@
 local modproxy = require "modproxy"
-local wrap = modproxy.wrap
-local eq = modproxy.eq
+local wrap = modproxy
+local unwrap = modproxy.unwrap
+--local eq = modproxy.eq
 
 local m = {"m"}
 
@@ -24,7 +25,7 @@ do
 	print("mod1=", mod1, "hello=", mod1.hello)
 end
 
-assert( eq(rawmod1, vmod1) == true)
+--assert( eq(rawmod1, vmod1) == true)
 assert( vmod1 ~= rawmod1)
 
 assert( vmod1 == wrap(rawmod1))
